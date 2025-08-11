@@ -37,4 +37,23 @@ Spring Security を利用したフォーム認証。
 - `application.properties` に Oracle 接続設定を記載。
 - Bootstrap を `src/main/resources/static` に配置。
 - 主要エンティティやコントローラ、サービスを実装予定。
+ 
+## 運用環境の構築手順
+### 必須ソフトウェア
+- **JDK** (例: OpenJDK 17)
+- **ビルドツール**: Maven または Gradle
+- **データベース**: Oracle Database
+- **環境変数**: `JAVA_HOME`、`ORACLE_HOME`、`PATH` などを適切に設定
 
+### セットアップ手順
+1. レポジトリをクローン  
+   `git clone https://example.com/codex_Q-A.git`
+2. `src/main/resources/application.properties` にデータベース接続設定を記述
+3. 依存関係のダウンロードとビルド  
+   `mvn clean package`
+4. アプリケーションの起動  
+   `mvn spring-boot:run`
+
+### 本番デプロイ
+- 生成された `war` を Apache Tomcat などのアプリケーションサーバに配置して起動
+- または、アプリケーションを Docker イメージ化し、コンテナとしてデプロイ
