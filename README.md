@@ -1,4 +1,4 @@
-# codex_Q-A
+# codex_Q-A_v0
 
 Spring Boot、Bootstrap、OracleDB を用いた技術系 Q&A Web アプリケーションの構想まとめです。
 
