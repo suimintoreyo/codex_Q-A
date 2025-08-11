@@ -42,18 +42,29 @@ Spring Security を利用したフォーム認証。
 ### 必須ソフトウェア
 - **JDK** (例: OpenJDK 17)
 - **ビルドツール**: Maven または Gradle
-- **データベース**: Oracle Database
-- **環境変数**: `JAVA_HOME`、`ORACLE_HOME`、`PATH` などを適切に設定
+- **データベース**: Oracle Database と Oracle JDBC ドライバ
+- **環境変数**: `JAVA_HOME`、`ORACLE_HOME` を設定し `PATH` に追加
 
 ### セットアップ手順
-1. レポジトリをクローン  
-   `git clone https://example.com/codex_Q-A.git`
+1. レポジトリをクローンしてディレクトリに移動
+   ```bash
+   git clone https://example.com/codex_Q-A.git
+   cd codex_Q-A
+   ```
 2. `src/main/resources/application.properties` にデータベース接続設定を記述
-3. 依存関係のダウンロードとビルド  
-   `mvn clean package`
-4. アプリケーションの起動  
-   `mvn spring-boot:run`
+3. 依存関係のダウンロードとビルド
+   ```bash
+   mvn clean package
+   # または
+   ./gradlew build
+   ```
+4. アプリケーションの起動
+   ```bash
+   mvn spring-boot:run
+   # または
+   java -jar target/*.jar
+   ```
 
 ### 本番デプロイ
-- 生成された `war` を Apache Tomcat などのアプリケーションサーバに配置して起動
-- または、アプリケーションを Docker イメージ化し、コンテナとしてデプロイ
+- 生成された `war` を Apache Tomcat などのアプリケーションサーバの `webapps` に配置して起動
+- もしくは Docker イメージを作成してコンテナとしてデプロイ
